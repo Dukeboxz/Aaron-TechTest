@@ -29,8 +29,12 @@ namespace TechTest
         /// </summary>
         /// <param name="subject"></param>
         /// <returns></returns>
-        private long GetNumberOfWords(string subject)
+        public long GetNumberOfWords(string subject)
         {
+            if(string.Empty == subject || string.IsNullOrWhiteSpace(subject))
+            {
+                return 0;
+            }
             string[] wordSplit = subject.Split(' ');
 
             return wordSplit.Length;
@@ -41,7 +45,7 @@ namespace TechTest
         /// </summary>
         /// <param name="subject"></param>
         /// <returns></returns>
-        private long GetLongestWordCharacterNumber(string subject)
+        public long GetLongestWordCharacterNumber(string subject)
         {
             string[] wordSplit = subject.Split(' ');
             long maxNumber = 0; 
