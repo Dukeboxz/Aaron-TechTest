@@ -72,6 +72,9 @@ namespace TechTest.Tests
             Assert.Equal((long)18, characters);
         }
 
+        /// <summary>
+        /// Test get number of words with string with punctuation 
+        /// </summary>
         [Fact]
         public void PunctationNumberOfWords()
         {
@@ -81,6 +84,9 @@ namespace TechTest.Tests
             Assert.Equal((long)5, words);
         }
 
+        /// <summary>
+        /// Test longest word method on character number with punctuation string
+        /// </summary>
         [Fact]
         public void PunctationCharacterLongestWord()
         {
@@ -90,7 +96,9 @@ namespace TechTest.Tests
             Assert.Equal((long)6, characters);
         }
 
-
+        /// <summary>
+        /// Number of wrds test with empty string
+        /// </summary>
         [Fact]
         public void EmptyStringNumberOfWords()
         {
@@ -100,6 +108,10 @@ namespace TechTest.Tests
             Assert.Equal((long)0, wordNumber);
         }
 
+
+        /// <summary>
+        /// longest word test with empty string
+        /// </summary>
         [Fact]
         public void EmptyStringLongestWord()
         {
@@ -109,6 +121,9 @@ namespace TechTest.Tests
             Assert.Equal((long)0, characters);
         }
 
+        /// <summary>
+        /// number of words with whitespace string
+        /// </summary>
         [Fact]
         public void WhitespaceStringNumberOfWords()
         {
@@ -118,6 +133,9 @@ namespace TechTest.Tests
             Assert.Equal((long)0, wordNumber);
         }
 
+        /// <summary>
+        /// longest character with whitespace string 
+        /// </summary>
         [Fact]
         public void WhitespaceStringLongestWordCharacters()
         {
@@ -126,6 +144,8 @@ namespace TechTest.Tests
 
             Assert.Equal((long)0, wordNumber);
         }
+
+         
 
     }
 }
