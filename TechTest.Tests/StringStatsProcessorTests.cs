@@ -9,5 +9,123 @@ namespace TechTest.Tests
     public class StringStatsProcessorTests
     {
 
+
+        /// <summary>
+        /// Basic test number of words
+        /// </summary>
+        [Fact]
+        public void ReturnCorrectModelNumberWord()
+        {
+            var processor = new StringStatsProcessor();
+            var returnedModel = processor.Run("3 word string"); 
+
+            Assert.Equal(3, returnedModel.NumberOfWords);
+
+        }
+
+        /// <summary>
+        /// Basic test number of characters
+        /// </summary>
+        [Fact]
+        public void ReturnCorrectModelCharacterCount()
+        {
+            var processor = new StringStatsProcessor();
+            var returnedModel = processor.Run("3 word string");
+
+            Assert.Equal(13, returnedModel.NumberOfCharacters);
+        }
+
+        /// <summary>
+        /// Basic test longest word length
+        /// </summary>
+        [Fact]
+        public void ReturnCorrectModelLongestWordLength()
+        {
+            var processor = new StringStatsProcessor();
+            var returnedModel = processor.Run("3 word string");
+
+            Assert.Equal(6, returnedModel.LongestWordNumberOfCharacters);
+        }
+
+
+        /// <summary>
+        /// Test with no white space word number method
+        /// </summary>
+        [Fact]
+        public void NoSpacesNumberOfWords()
+        {
+            var processor = new StringStatsProcessor();
+            long wordNumber = processor.GetNumberOfWords("stringWithNoSpaces"); 
+
+            Assert.Equal((long)1, wordNumber);
+        }
+
+        /// <summary>
+        /// Test with no whitespace longer word character
+        /// </summary>
+        [Fact]
+        public void NoSpacesLongestWord()
+        {
+            var processor = new StringStatsProcessor();
+            long characters = processor.GetLongestWordCharacterNumber("stringWithNoSpaces");
+
+            Assert.Equal((long)18, characters);
+        }
+
+        [Fact]
+        public void PunctationNumberOfWords()
+        {
+            var processor = new StringStatsProcessor();
+            long words = processor.GetNumberOfWords("I'm a string with puntuation.");
+
+            Assert.Equal((long)5, words);
+        }
+
+        [Fact]
+        public void PunctationCharacterLongestWord()
+        {
+            var processor = new StringStatsProcessor();
+            long characters = processor.GetLongestWordCharacterNumber("word1 word2 word3.");
+
+            Assert.Equal((long)6, characters);
+        }
+
+
+        [Fact]
+        public void EmptyStringNumberOfWords()
+        {
+            var processor = new StringStatsProcessor();
+            long wordNumber = processor.GetNumberOfWords(String.Empty);
+
+            Assert.Equal((long)0, wordNumber);
+        }
+
+        [Fact]
+        public void EmptyStringLongestWord()
+        {
+            var processor = new StringStatsProcessor();
+            long characters = processor.GetLongestWordCharacterNumber(string.Empty);
+
+            Assert.Equal((long)0, characters);
+        }
+
+        [Fact]
+        public void WhitespaceStringNumberOfWords()
+        {
+            var processor = new StringStatsProcessor();
+            long wordNumber = processor.GetNumberOfWords("   ");
+
+            Assert.Equal((long)0, wordNumber);
+        }
+
+        [Fact]
+        public void WhitespaceStringLongestWordCharacters()
+        {
+            var processor = new StringStatsProcessor();
+            long wordNumber = processor.GetLongestWordCharacterNumber("   ");
+
+            Assert.Equal((long)0, wordNumber);
+        }
+
     }
 }
