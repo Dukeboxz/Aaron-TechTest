@@ -24,6 +24,11 @@ namespace TechTest
         }
 
 
+        /// <summary>
+        /// Helper method that gets number of seperate words in string
+        /// </summary>
+        /// <param name="subject"></param>
+        /// <returns></returns>
         private long GetNumberOfWords(string subject)
         {
             string[] wordSplit = subject.Split(' ');
@@ -31,6 +36,11 @@ namespace TechTest
             return wordSplit.Length;
         }
 
+        /// <summary>
+        /// Helper methods that returns the length of longest seperate word in string.
+        /// </summary>
+        /// <param name="subject"></param>
+        /// <returns></returns>
         private long GetLongestWordCharacterNumber(string subject)
         {
             string[] wordSplit = subject.Split(' ');
