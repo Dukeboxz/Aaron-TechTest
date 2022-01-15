@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using Xunit;
 
 namespace TechTest.Tests
@@ -133,6 +134,15 @@ namespace TechTest.Tests
             Assert.Equal((long)0, wordNumber);
         }
 
+        [Fact]
+        public void NumberOfWordsWhitespaceAtEnd()
+        {
+            var processor = new StringStatsProcessor();
+            long wordNumber = processor.GetNumberOfWords("whitespace at end ");
+
+            Assert.Equal((long)3, wordNumber);
+        }
+
         /// <summary>
         /// longest character with whitespace string 
         /// </summary>
@@ -143,6 +153,32 @@ namespace TechTest.Tests
             long wordNumber = processor.GetLongestWordCharacterNumber("   ");
 
             Assert.Equal((long)0, wordNumber);
+        }
+
+        [Fact]
+        public void DealWithLargeInputNumberOfWords()
+        {
+            string words = "Stephen's headphone hair is awsome!";
+            long totalWords = 5;
+            StringBuilder strb = new StringBuilder("Stephen's headphone hair is awsome!"); 
+
+
+            for(int i = 0; i < 150000; i++)
+            {
+                strb.Append(' ');
+                strb.Append(words); 
+               
+                totalWords = totalWords + 5;
+            }
+
+
+
+            var processor = new StringStatsProcessor();
+            var returnedModel = processor.Run(strb.ToString());
+
+            Assert.Equal(totalWords, returnedModel.NumberOfWords);
+            Assert.Equal(9, returnedModel.LongestWordNumberOfCharacters); 
+
         }
 
          
