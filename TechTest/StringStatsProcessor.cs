@@ -35,7 +35,7 @@ namespace TechTest
             {
                 return 0;
             }
-            string[] wordSplit = subject.Split(' ');
+            string[] wordSplit = subject.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
             return wordSplit.Length;
         }
