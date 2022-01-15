@@ -1,13 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTest", "TechTest\TechTest.csproj", "{1802B36E-0368-4C80-B0F2-90A7FB63676D}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechTest", "TechTest\TechTest.csproj", "{1802B36E-0368-4C80-B0F2-90A7FB63676D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTest.Tests", "TechTest.Tests\TechTest.Tests.csproj", "{8638A404-5C18-45BE-A6C3-6EE3A5F87847}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechTest.Tests", "TechTest.Tests\TechTest.Tests.csproj", "{8638A404-5C18-45BE-A6C3-6EE3A5F87847}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Instructions", "Instructions", "{9FAB0A82-697F-452B-9952-79B08E03B71E}"
-ProjectSection(SolutionItems) = preProject
-	readme.md = readme.md
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTestApi", "TechTestApi\TechTestApi.csproj", "{B2039299-6920-4BA8-8273-349F8BE7A21A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,5 +28,15 @@ Global
 		{8638A404-5C18-45BE-A6C3-6EE3A5F87847}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8638A404-5C18-45BE-A6C3-6EE3A5F87847}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8638A404-5C18-45BE-A6C3-6EE3A5F87847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2039299-6920-4BA8-8273-349F8BE7A21A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2039299-6920-4BA8-8273-349F8BE7A21A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2039299-6920-4BA8-8273-349F8BE7A21A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2039299-6920-4BA8-8273-349F8BE7A21A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E4FBDA8-D432-4D4B-B756-5BF5D64D9A77}
 	EndGlobalSection
 EndGlobal
