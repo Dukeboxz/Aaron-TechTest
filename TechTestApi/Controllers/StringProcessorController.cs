@@ -11,6 +11,13 @@ namespace TechTestApi.Controllers
     public class StringProcessorController : ControllerBase
     {
 
+        IStringStatProcessor _processor; 
+
+        public StringProcessorController(IStringStatProcessor stringStatProcessor)
+        {
+            _processor = stringStatProcessor;
+        }
+
         [HttpGet]
         public IActionResult GetStringStats(string subject)
         {
@@ -20,9 +27,9 @@ namespace TechTestApi.Controllers
                 {
                     return BadRequest(); 
                 }
-                StringStatsProcessor processor = new StringStatsProcessor();
+               
 
-                var result = processor.Run(subject);
+                var result = _processor.Run(subject);
 
                 return new JsonResult(result);
 

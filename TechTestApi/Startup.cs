@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TechTest;
 
 namespace TechTestApi
 {
@@ -26,6 +27,8 @@ namespace TechTestApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.Add(new ServiceDescriptor(typeof(IStringStatProcessor), new StringStatsProcessor())); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

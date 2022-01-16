@@ -5,7 +5,7 @@ namespace TechTest
     /// <summary>
     /// Extracts statistics from the supplied string.
     /// </summary>
-    public class StringStatsProcessor
+    public class StringStatsProcessor : IStringStatProcessor
     {
         /// <summary>
         /// Extracts statistics from the supplied string.
